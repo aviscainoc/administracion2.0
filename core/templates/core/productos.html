@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% block title %}Productos Promoshop{% endblock %}
+
+
+
+
+{% block informacionTabla %}Prodcutos con los que cuenta Promoshop{% endblock %}
+{% block tablatitle  %}Productos PromoShop{% endblock %}
+
+<!--- Contenido de las tablas, titulos de cabecera y pie de la tabla-->
+
+{% block cabeceraTabla %}
+
+<tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Eslogan</th>
+    <th>Precio Actual</th>
+    <th>Estado</th>
+    <th>Empresa</th>
+    <th>Acciones</th>
+</tr>
+
+{% endblock %}
+
+
+
+
+<!--- Contenido de las tablas, informacion recuperada de la base de datos con el objeto empresa-->
+
+{% block datosTabla %}
+{% for i in productosLista %}
+    <tr>
+        <td>{{i.0}}</td>
+        <td>{{i.1}}</td>
+        <td>{{i.2}}</td>
+        <td>{{i.3}}</td>
+        <td>{{i.4}}</td>
+        <td>{{i.5}}</td>
+        <td>{{i.6}}</td>
+       
+        <td><a href='editarProductoServicio/{{i.0}}'> Editar</a>  </td>
+    </tr>
+{% endfor %}
+{% endblock %}

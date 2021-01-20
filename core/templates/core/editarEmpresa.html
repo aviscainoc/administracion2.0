@@ -1,0 +1,136 @@
+{% extends 'core/base.html' %}
+{% load static %}  
+{% block title %}Editar Empresas{% endblock %}
+
+{% block content %}
+    
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form  class="form-horizontal" method="POST">
+                    {% csrf_token %}
+                   
+                    <fieldset>
+                        
+                        <legend class="text-center header"> Editar Empresa  </legend>
+                        <div class="form-group">
+                                <label for="image">Logo de la Empresa</label>
+                                <img src="{% static 'core/imagenes/resultado.png' %}" height="120px" alt="img">
+                            </div><br>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="Nombre">  Nombre</label>
+                            <div class="col-md-8">
+                                <input id="empresa" name="empresa" type="text" value='{{editarEmpresa.6}}' class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class=""></i></span>
+                            <label for="Horarios">  Eslogan</label>
+                            <div class="col-md-8">
+                                <input id="slogan" name="slogan" type="text" value='{{editarEmpresa.2}} ' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class=""></i></span>
+                            <label for="_Descripcion"> Descripción</label>
+                            <div class="col-md-8">
+                                <input id="desc" name="desc" type="text" value='{{editarEmpresa.1}}'    class="form-control">
+                            </div>
+                        </div>
+                         <!-- horario de atencion-->
+                        <label for="Horarios">  Horario de Atencion</label>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <label for="Horarios">  Apertura</label>
+                                <input id="abre" name="abre" type="text" value="{{editarEmpresa.18}}" class="form-control"> <br>
+                                <label for="Horarios">  Cierre</label>
+                                <input id="cierra" name="cierra" type="text" value="{{editarEmpresa.19}}" class="form-control">
+                            </div>
+                        </div>
+                       
+                        <!-- valor de la class  fa fa-phone-square bigicon-->
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class=""></i></span>
+                            <label for="LinkFacebook">  Link de Facebook</label>
+                            <div class="col-md-8">
+                                <input id="face" name="face" type="text" value='{{editarEmpresa.3}}' placeholder="Ingrese una direccion de Facebook"   class="form-control">
+                            </div>
+
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class=""></i></span>
+                            <label for="LinkTwitter">  Link de Twitter</label>
+                             <div class="col-md-8">
+                                <input id="twritter" name="twritter" type="text" value='{{editarEmpresa.8}}' placeholder="Ingrese una direccion de Twitter" class="form-control">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class=""></i></span>
+                            <label for="LinkWeb"> Sitio Web</label>
+                            <div class="col-md-8">
+                                <input id="web" name="web" type="text" value='{{editarEmpresa.12}}' placeholder="Ingrese una direccion del sitio web"   class="form-control">
+                            </div>
+                        </div>
+    								
+						<div class="row">
+
+							<div class="col-md-12 mr-auto">
+								<div class="form-group">
+
+									<div class="input-group">
+
+										<label class="label-control"> Seleccione una categeoria: <br />
+                                            <span class="ui-chkbox-icon ui-icon ui-icon-blank ui-c">
+                                                
+                                                {% for i in categoria %}
+                                                    
+                                                    <input type="checkbox" name= "opcion1"value= "{{i.1}}"> {{i.1}} <br />
+                                                    
+                                                {% endfor %}
+                                            
+										
+										</div>
+
+									</div>
+								</div>
+						</div>                    
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class=""></i></span>
+                            <label for="porcentaje"> Estado de la Empresa (AP 'Aprobar', PEN 'Pendiente', ELM 'Eliminar')</label>
+
+                            <div class="col-md-8">
+                                <input id="estado" name="estado" value={{editarEmpresa.15}}  type="text"  class="form-control">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class=""></i></span>
+                            <label for="porcentaje"> Porcentaje</label>
+
+                            <div class="col-md-8">
+                                <input id="porcentaje" name="porcentaje" value='{{editarEmpresa.16}}'  type="number" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg" value ="Guardar", name="save">Guardar</button>
+                            </div>
+                        </div>
+
+                        
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    
+      
+
+{% endblock %}
+ 
+ 

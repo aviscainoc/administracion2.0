@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% block title %}Empresas Pendientes {% endblock %}
+
+{% block informacionTabla %}Listado de las empresas que estan pendientes por aprobar dentro de la tienda
+{% endblock %}
+{% block tablatitle  %}Empresas Pendientes{% endblock %}
+
+<!--- Contenido de las tablas, titulos de cabecera y pie de la tabla-->
+
+{% block cabeceraTabla %}
+
+<tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Fecha de Creacion</th>
+    <th>Estado</th>
+    <th>Acciones</th>
+</tr>
+
+{% endblock %}
+
+
+
+
+<!--- Contenido de las tablas, informacion recuperada de la base de datos con el objeto empresa-->
+
+{% block datosTabla %}
+{% for i in empresa %}
+    <tr>
+        <td>{{i.0}}</td>
+        <td>{{i.1}}</td>
+        <td>{{i.2}}</td>
+        <td>
+        {% if i.3 == 'AP'%}
+        Aprobado
+        {% elif i.3 == 'PEN' %}
+        Pendiente
+            {% elif i.3 == 'ELM' %}
+        Eliminado
+        {% endif %}
+        </td>
+        <td><a href='editarEmpresa/{{i.0}}'> Editar</a> | <a href='delete/{{i.0}}'>Eliminar </a> </td>
+    </tr>
+{% endfor %}
+
+{% endblock %}

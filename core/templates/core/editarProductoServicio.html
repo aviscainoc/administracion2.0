@@ -1,0 +1,220 @@
+{% extends 'core/base.html' %}
+{% load static %}  
+{% block title %}Editar Productos y Servicios{% endblock %}
+
+{% block content %}
+    
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form  class="form-horizontal" method="POST">
+                    {% csrf_token %}
+                   
+                    <fieldset>
+                        
+                        <legend class="text-center header"> Editar Productos y Servicios  </legend>
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="Nombre">  Nombre del producto</label>
+                            <div class="col-md-8">
+                                <input id="nombre" name="nombre" type="text" value='{{producto.13}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="Comentario">  Comentarios</label>
+                            <div class="col-md-8">
+                                <input id="comentario" name="comentario" type="text" value='{{producto.1}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="Descripción">  Descripcion</label>
+                            <div class="col-md-8">
+                                <input id="descripcion" name="descripcion" type="text" value='{{producto.2}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="Baner">  Baner(1 Si, 0 No)</label>
+                            <div class="col-md-8">
+                                <input id="baner" name="baner" type="text" value='{{producto.3}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="Baner">  Estado</label>
+                            <div class="col-md-8">
+                                <input id="estado" name="estado" type="text" value='{{producto.4}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="FechaCreacion">Fecha de Creacion</label>
+                            <div class="col-md-8">
+                                <input id="fechacreacion" name="fechacreacion" type="text" value='{{producto.5}}' form readonly class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="FechaFinPlataforma">Fecha de fin en la plataforma</label>
+                            <div class="col-md-8">
+                                <input id="fechafinplataforma" name="fechafinplataforma" type="date" value='{{producto.6}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="FechaFinPromocion">Fecha de fin en la promocion</label>
+                            <div class="col-md-8">
+                                <input id="fechafinpromocion" name="fechafinpromocion" type="date" value='{{producto.7}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="FechaInicioPromocion">Fecha de inicio en la promocion</label>
+                            <div class="col-md-8">
+                                <input id="fechainiciopromocion" name="fechainiciopromocion" type="date" value='{{producto.8}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="FechaInicioPromocion">Ultima modificacion</label>
+                            <div class="col-md-8">
+                                <input id="fechamodificacion" name="fechamodificacion" type="text" value='{{producto.9}}' readonly class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="GananciaCupon">Ganancia del cupon</label>
+                            <div class="col-md-8">
+                                <input id="gananciacupon" name="gananciacupon" type="text" value='{{producto.10}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="MostrarPrecio">Mostrar precio (1 'Si', 0 'No')</label>
+                            <div class="col-md-8">
+                                <input id="mostrarprecio" name="mostrarprecio" type="text" value='{{producto.11}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="MostrarDescuento">Mostrar Descuento (1 'Si', 0 'No')</label>
+                            <div class="col-md-8">
+                                <input id="mostrardescuento" name="mostrardescuento" type="text" value='{{producto.12}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="NumeroCuponesPromocion">Numero de Cupones para la promocion</label>
+                            <div class="col-md-8">
+                                <input id="numerocuponespromocion" name="numerocuponespromocion" type="text" value='{{producto.14}}'  class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="NumeroCuponesUsados">Numero de Cupones Utilizados</label>
+                            <div class="col-md-8">
+                                <input id="numerocuponesusados" name="numerocuponesusados" type="text" value='{{producto.15}}' readonly class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="porcentajeDescuento">Porcentaje de Descuento</label>
+                            <div class="col-md-8">
+                                <input id="porcentajedescuento" name="porcentajedescuento" type="number" value='{{producto.16}}' required class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="precioactual">Precio Actual</label>
+                            <div class="col-md-8">
+                                <input id="precioactual" name="precioactual" type="number" value='{{producto.17}}' required class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="precioinicial">Precio Inicial</label>
+                            <div class="col-md-8">
+                                <input id="precioinicial" name="precioinicial" type="number" value='{{producto.18}}' required class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="prioridad">Prioridad</label>
+                            <div class="col-md-8">
+                                <input id="prioridad" name="prioridad" type="text" value='{{producto.19}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="restricciones">Restricciones</label>
+                            <div class="col-md-8">
+                                <input id="restricciones" name="restricciones" type="text" value='{{producto.20}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="eslogan">Eslogan</label>
+                            <div class="col-md-8">
+                                <input id="eslogan" name="eslogan" type="text" value='{{producto.21}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="cupones">Tiene Cupones (1 'Si', 2 'No')</label>
+                            <div class="col-md-8">
+                                <input id="cupones" name="cupones" type="text" value='{{producto.22}}' class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="material-icons"></i></span>
+                            <label for="ahorro">Valor de ahorro</label>
+                            <div class="col-md-8">
+                                <input id="ahorro" name="ahorro" type="number" value='{{producto.23}}' required class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg" value ="Guardar", name="save">Guardar</button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    
+      
+
+{% endblock %}
+ 
+ 
